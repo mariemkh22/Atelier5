@@ -1,0 +1,30 @@
+{{form_start(f)}}
+{{form_label(f)}}
+{{form_widget(f)}}
+{{form_end(f)}}
+<table border="3">
+    <tr>
+        <td>ref</td>
+        <td>title</td>
+        <td>category</td>
+        <td>publishedDate</td>
+        <td>published</td>
+        <td>action</td>
+        <td>action</td>
+       
+      
+
+    </tr>
+    {%for i  in book%}
+    <tr>
+       
+        <td>{{i.ref}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.category}}</td>
+        <td>{{i.publishedDate}}</td>
+        <td>{{i.published}}</td>
+        <td><a href="{{path('editbook',{id:i.id})}}">edit</a></td>
+        <td><a href="{{path('deletebook',{id:i.id})}}">delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
